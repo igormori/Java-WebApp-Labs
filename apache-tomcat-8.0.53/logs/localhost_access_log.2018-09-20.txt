@@ -1,0 +1,6 @@
+127.0.0.1 - - [20/Sep/2018:01:09:43 -0400] "GET / HTTP/1.1" 200 11488
+127.0.0.1 - - [20/Sep/2018:01:14:57 -0400] "GET / HTTP/1.1" 200 11488
+0:0:0:0:0:0:0:1 - - [20/Sep/2018:01:14:58 -0400] "GET /servletslabs/form.html HTTP/1.1" 200 419
+0:0:0:0:0:0:0:1 - - [20/Sep/2018:01:15:04 -0400] "GET /servletslabs/form.html HTTP/1.1" 200 419
+0:0:0:0:0:0:0:1 - - [20/Sep/2018:01:15:07 -0400] "GET /servletslabs/HelloWorld?number=20 HTTP/1.1" 200 188
+0:0:0:0:0:0:0:1 - - [20/Sep/2018:01:15:13 -0400] "POST /servletslabs/HelloWorld HTTP/1.1" 500 96
