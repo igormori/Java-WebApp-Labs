@@ -39,20 +39,21 @@ public class HelloWorld extends HttpServlet {
 		pw.println("<h1>Hello World</h1>");
 		pw.println("");
 		
+		String result = "";
 		// factor  the number
-		
 		String number = request.getParameter("number");
 		int intNumber = Integer.parseInt(number);		
-		for(int i = 1; i <= intNumber ; i++) {
-			if(intNumber%i == 0) {
-				String result = Integer.toString(i);
-				PrintWriter pw2 = response.getWriter();
-				pw2.println("<h2>");
-				pw2.println("number: "+result);
-				pw2.println("</h2>");
-				pw2.println("");
-			}
-		}
+		int i,fact=1;  
+		 for(i=1;i<=intNumber;i++){    
+		      fact=fact*i;    
+		 }    
+		result = Integer.toString(fact);	
+		PrintWriter pw2 = response.getWriter();
+		pw2.println("<h2>");
+		pw2.println("My number is: "+ number + "</br>");
+		pw2.println("My factorial number is: "+ result);
+		pw2.println("</h2>");
+		pw2.println("");
 		
 		
 	}
