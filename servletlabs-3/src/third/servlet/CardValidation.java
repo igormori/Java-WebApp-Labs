@@ -1,38 +1,58 @@
 package third.servlet;
 
 import java.util.regex.Matcher;
+
 import java.util.regex.Pattern;
 
 public class CardValidation {
 	
-	public static int calculate(String card)
-	{
-		int number=0;
-	
-		String[] array =card.split("");
-	
-		String regex = "^(?:(?<visa>4[0-9]{12}(?:[0-9]{3})?)|" +
-		        "(?<mastercard>5[1-5][0-9]{14})|" +
-		        "(?<discover>6(?:011|5[0-9]{2})[0-9]{12})|" +
-		        "(?<amex>3[47][0-9]{13})|" +
-		        "(?<diners>3(?:0[0-5]|[68][0-9])?[0-9]{11})|" +
-		        "(?<jcb>(?:2131|1800|35[0-9]{3})[0-9]{11}))$";
-		
-		Pattern pattern = Pattern.compile(regex);
-		
-		for (String cards : array )
-		{
-		    //Match the card
-		    Matcher matcher = pattern.matcher(cards);
-		
-		    if(matcher.matches()) {
-		        //If card is valid then verify which group it belong
-		    	matcher.group("mastercard");
-		       return number =1;
+	public static int s;
+
+		public enum CardType {
+
+		    UNKNOWN,
+		    VISA("^4[0-9]{12}(?:[0-9]{3}){0,2}$"),
+		    MASTERCARD("^(?:5[1-5]|2(?!2([01]|20)|7(2[1-9]|3))[2-7])\\d{14}$"),
+		    AMERICAN_EXPRESS("^3[47][0-9]{13}$");
+		  
+
+		    private Pattern pattern;
+
+		    CardType() {
+		        this.pattern = null;
 		    }
-		}
+
+		    CardType(String pattern) {
+		        this.pattern = Pattern.compile(pattern);
+		    }
+
+		    public static CardType detect(String cardNumber) {
+
+		        for (CardType cardType : CardType.values()) {
+		            if (null == cardType.pattern) continue;
+		            if (cardType.pattern.matcher(cardNumber).matches())
+		            if(cardType == VISA)
+		            {
+		            	s = 4;
+		            	return cardType;
+		            }
+		            else if(cardType == MASTERCARD)
+		            {
+		            	s = 5;
+		            	return cardType;
+		            }
+		            else if(cardType == AMERICAN_EXPRESS)
+		            {
+		            	s = 3;
+		            	return cardType;
+		            }
+		            
+		        }
+
+		        return UNKNOWN;
+		    }
+
 		
-		return number;
 	
 	}
 	

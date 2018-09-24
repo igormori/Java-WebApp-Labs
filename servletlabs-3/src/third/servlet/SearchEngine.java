@@ -42,12 +42,24 @@ public class SearchEngine extends HttpServlet {
 	
 		
 		String card = request.getParameter("card");
-		if(CardValidation.calculate(card)== 1) {
-			response.sendRedirect("http://www.bing.ca");
+		
+		CardValidation.CardType.detect(card);
+		if(CardValidation.s == 4)
+		{
+			response.sendRedirect("http://www.visa.com");
 		}
-		
-		
+		else if(CardValidation.s == 5)
+		{
+			response.sendRedirect("http://www.mastercard.com");
+		}
+		else if(CardValidation.s == 3)
+		{
+			response.sendRedirect("http://www.americanexpress.com/canada");
+		}
+		System.out.println(CardValidation.CardType.detect(card));
+			
 	}
+	
 
 }
 
