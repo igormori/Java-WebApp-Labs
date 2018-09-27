@@ -11,53 +11,45 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-/**
- * Servlet implementation class SearchEngine
- */
 @WebServlet("/search")  // make sure the action on the form is the same
 public class SearchEngine extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+ 
     public SearchEngine() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	
 		
 		String card = request.getParameter("card");
 		
-		CardValidation.CardType.detect(card);
-		if(CardValidation.s == 4)
+		
+		String s = CardValidation.CardType.detect(card).toString();
+		
+		if(s == "VISA")
 		{
 			response.sendRedirect("http://www.visa.com");
 		}
-		else if(CardValidation.s == 5)
+		else if(s == "MASTERCARD")
 		{
 			response.sendRedirect("http://www.mastercard.com");
 		}
-		else if(CardValidation.s == 3)
+		else if(s == "AMERICAN_EXPRESS")
 		{
 			response.sendRedirect("http://www.americanexpress.com/canada");
+		}else  {
+			response.sendRedirect("creditCard.html"); // this is send me to a other html form on my project
 		}
-		System.out.println(CardValidation.CardType.detect(card));
-			
+		
 	}
 	
 

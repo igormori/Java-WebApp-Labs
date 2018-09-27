@@ -6,8 +6,8 @@ import java.util.regex.Pattern;
 
 public class CardValidation {
 	
-	public static int s;
 
+		//special function to define collection of constants
 		public enum CardType {
 
 		    UNKNOWN,
@@ -15,7 +15,8 @@ public class CardValidation {
 		    MASTERCARD("^(?:5[1-5]|2(?!2([01]|20)|7(2[1-9]|3))[2-7])\\d{14}$"),
 		    AMERICAN_EXPRESS("^3[47][0-9]{13}$");
 		  
-
+			// to identify patterns this have special function named matches that identify patterns 
+			//accordly with the constants above
 		    private Pattern pattern;
 
 		    CardType() {
@@ -33,20 +34,17 @@ public class CardValidation {
 		            if (cardType.pattern.matcher(cardNumber).matches())
 		            if(cardType == VISA)
 		            {
-		            	s = 4;
 		            	return cardType;
 		            }
 		            else if(cardType == MASTERCARD)
 		            {
-		            	s = 5;
 		            	return cardType;
 		            }
 		            else if(cardType == AMERICAN_EXPRESS)
 		            {
-		            	s = 3;
 		            	return cardType;
 		            }
-		            
+
 		        }
 
 		        return UNKNOWN;

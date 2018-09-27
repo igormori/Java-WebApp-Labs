@@ -124,7 +124,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\Users\T440\Documents\projects\Java-WebApp-Labs\apache-tomcat-8.0.53\wtpwebapps\servletslabs" path="/servletslabs" reloadable="true" source="org.eclipse.jst.jee.server:servletslabs"/><Context docBase="C:\Users\T440\Documents\projects\Java-WebApp-Labs\apache-tomcat-8.0.53\wtpwebapps\servletlabs-3" path="/servletlabs-3" reloadable="true" source="org.eclipse.jst.jee.server:servletlabs-3"/></Host>
+      <Context docBase="C:\Users\T440\Documents\projects\Java-WebApp-Labs\apache-tomcat-8.0.53\wtpwebapps\servletslabs" path="/servletslabs" reloadable="true" source="org.eclipse.jst.jee.server:servletslabs"/><Context docBase="C:\Users\T440\Documents\projects\Java-WebApp-Labs\apache-tomcat-8.0.53\wtpwebapps\servletlabs-3" path="/servletlabs-3" reloadable="true" source="org.eclipse.jst.jee.server:servletlabs-3"/><Context docBase="C:\Users\T440\Documents\projects\Java-WebApp-Labs\apache-tomcat-8.0.53\wtpwebapps\CookiesLecture" path="/CookiesLecture" reloadable="true" source="org.eclipse.jst.jee.server:CookiesLecture"/></Host>
     </Engine>
   </Service>
 </Server>
