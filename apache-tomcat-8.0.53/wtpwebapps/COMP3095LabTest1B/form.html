@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div style="text-align:center">
+
+<form method="post" action="form" >
+<h1> Online Order</h1>
+<h3>fields marked with  * are required</h3>
+<hr>
+<p>
+ First Name* <input type="text" name="firstName" required/> Last Name:  <input type="text" name="lastName" required /><br>
+</p>
+
+<div style="text-align:center,">
+ Your Email* <input type="text" name="Email" required/><br><br>
+ Street address* <input type="text" name="address" required/><br><br>
+ Zip/Postal Code* <input type="text" name="zip" required/><br><br>
+ City* <input type="text" name="city" required/><br><br>
+ </div>
+ <hr>
+  <select name="item1">
+    <option value="iPhoneX">iPhoneX - $1000</option> 
+    <option value="iPhone8+">iPhone 8+ - $800</option>
+    <option value="Xiaomi">Xiaomi Redmi - $750</option>
+  </select><input type="text" name="Qphone" />
+  <br><br>
+    <select name="item2">
+    <option value="huawei">Huawei mateBook - $950
+    <option value="dell">Dell XPS 13 - $900</option> 
+    <option value="azus">Azus Zenbook - $800</option>
+  </select><input type="text" name="Qpc" />
+   <br><br>
+     <select name="item3">
+    <option value="ipad">iPad Pro 10.5 - $1200</option> 
+    <option value="s3">Samsung galaxy s3 - $1100</option>
+    <option value="ms">Ms Surface Pro - 1400</option>
+  </select><input type="text" name="Qtablet" />
+   <br><br>
+  
+  <h3>Further Instructions</h3>
+  <textarea rows="4" cols="50">
+
+</textarea>
+<br><br>
+  
+ <input type="submit" value="submit order" />
+ </form>
+
+</div>
+
+
+</body>
+</html>
