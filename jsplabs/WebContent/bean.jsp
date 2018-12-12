@@ -13,7 +13,7 @@
 <jsp:setProperty name="student" property="firstName" value="Zara"/>
 <jsp:setProperty name="student" property="lastName" value="Ali"/>
 <jsp:setProperty name="student" property="age" value="10"/>
-
+<jsp:setProperty name="student" property="id" value="10"/>
 
 </jsp:useBean>
 
@@ -27,6 +27,10 @@
 
 <p>Student age:
 	<jsp:getProperty name="student" property="age"/>
+</p>
+
+<p>Student id:
+	<jsp:getProperty name="student" property="id"/>
 </p>
 
 
@@ -43,6 +47,9 @@
   <br>
   Age:<br>
   <input type="text" name="age" >
+  <br>
+  id:<br>
+  <input type="text" name="id" >
   <br><br>
   <input type="submit" value="Submit">
 

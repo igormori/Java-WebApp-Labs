@@ -13,6 +13,7 @@
 <jsp:setProperty name="student" property="firstName" value='<%=request.getParameter("firstname") %>'/>
 <jsp:setProperty name="student" property="lastName" value='<%=request.getParameter("lastname") %>'/>
 <jsp:setProperty name="student" property="age" value='<%=Integer.parseInt(request.getParameter("age"))	 %>'/>
+<jsp:setProperty name="student" property="id"  value='<%=request.getParameter("id") %>'/>
 
 
 </jsp:useBean>
@@ -27,6 +28,10 @@
 <p>Student age:
 	<jsp:getProperty name="student" property="age"/>
 </p>
+<p>Student id:
+	<jsp:getProperty name="student" property="id"/>
+</p>
+	
 
 
 <p>Student full name:
